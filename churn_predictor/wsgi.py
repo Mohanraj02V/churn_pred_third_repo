@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 
 # Set default settings module
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'churn_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'churn_predictor.settings')
 
 application = get_wsgi_application()
 
