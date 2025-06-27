@@ -1,28 +1,26 @@
+databases:
+  - name: churnpredictor
+    databaseName: churnpredictor
+    user: churnpredictor
+    plan: free
+
 services:
   - type: web
-    name: ml-api
+    name: churn-predictor-api
     runtime: python
-    buildCommand: |
-      pip install -r requirements.txt
-      python manage.py migrate
-      python manage.py collectstatic --noinput
-    startCommand: gunicorn mlapi.wsgi:application --bind 0.0.0.0:$PORT
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn churn_predictor.wsgi:application"
     envVars:
-      - key: PORT
-        value: 10000  # Required for Render's internal routing
-      - key: PYTHON_VERSION
-        value: 3.11.6  # Match your local Python version
-      - key: DJANGO_SETTINGS_MODULE
-        value: mlapi.settings
-      - key: DJANGO_SECRET_KEY
+      - key: DATABASE_URL
+        fromDatabase:
+          name: churnpredictor
+          property: connectionString
+      - key: SECRET_KEY
         generateValue: true
-      - key: DJANGO_ALLOWED_HOSTS
-        value: "ml-api.onrender.com *.onrender.com"  # Wildcard for all Render URLs
-      - key: DISABLE_COLLECTSTATIC
-        value: 0  # Only if using Whitenoise
-    database:
-      name: mlapi-mysql
-      plan: free  # Or your chosen plan
-    plan: starter
-    healthCheckPath: /health/
-    autoDeploy: true
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "churn-predictor-api.onrender.com"
+    plan: free
