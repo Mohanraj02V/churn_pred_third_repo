@@ -8,11 +8,13 @@ services:
   - type: web
     name: churn-predictor-api
     runtime: python
-    pythonVersion: "3.11.8"  # Explicitly set compatible Python version
+    pythonVersion: "3.11.8"
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-    startCommand: "gunicorn churn_predictor.wsgi:application"
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn churn_predictor.wsgi:application
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -24,6 +26,6 @@ services:
         value: 4
       - key: DEBUG
         value: "False"
-      - key: ALLOWED_HOSTS
-        value: "churn-predictor-api.onrender.com"
+      - key: RENDER_EXTERNAL_HOSTNAME
+        value: ${RENDER_SERVICE_NAME}.onrender.com
     plan: free
