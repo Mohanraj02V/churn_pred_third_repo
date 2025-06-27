@@ -8,7 +8,10 @@ services:
   - type: web
     name: churn-predictor-api
     runtime: python
-    buildCommand: "./build.sh"
+    pythonVersion: "3.11.8"  # Explicitly set compatible Python version
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
     startCommand: "gunicorn churn_predictor.wsgi:application"
     envVars:
       - key: DATABASE_URL
