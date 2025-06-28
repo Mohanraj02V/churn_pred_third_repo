@@ -90,10 +90,17 @@ DATABASES = {
 '''
 import dj_database_url
 
-# Use DATABASE_URL from environment
-DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
-}
+if os.environ.get("DATABASE_URL"):
+    DATABASES = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 '''
 if os.environ.get('DATABASE_URL'):
     DATABASES = {
