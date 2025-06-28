@@ -167,6 +167,9 @@ import os
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# In settings.py
+CORS_ALLOW_ALL_ORIGINS = True  # Temporary for debugging
+CSRF_TRUSTED_ORIGINS = ['https://churn-pred-third-repo-3.onrender.com']
 '''
 # Add this for Render external hostname
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
