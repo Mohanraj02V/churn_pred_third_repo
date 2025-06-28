@@ -1,3 +1,4 @@
+'''
 databases:
   - name: churnpredictor
     databaseName: churnpredictor
@@ -14,6 +15,34 @@ services:
       pip install -r requirements.txt
       python manage.py makemigrations
       python manage.py migrate
+    startCommand: gunicorn churn_predictor.wsgi:application
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: churnpredictor
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "churn-predictor-api.onrender.com"
+    plan: free
+'''
+databases:
+  - name: churnpredictor
+    databaseName: churnpredictor
+    user: churnpredictor
+    plan: free
+
+services:
+  - type: web
+    name: churn-predictor-api
+    runtime: python
+    pythonVersion: 3.11.8
+    buildCommand: ./build.sh
     startCommand: gunicorn churn_predictor.wsgi:application
     envVars:
       - key: DATABASE_URL
