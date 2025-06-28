@@ -12,6 +12,7 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
+      python manage.py migrate
     startCommand: gunicorn churn_predictor.wsgi:application
     envVars:
       - key: DATABASE_URL
