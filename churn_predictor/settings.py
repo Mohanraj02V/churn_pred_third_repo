@@ -88,6 +88,13 @@ DATABASES = {
     }
 }
 '''
+import dj_database_url
+
+# Use DATABASE_URL from environment
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600)
+}
+'''
 if os.environ.get('DATABASE_URL'):
     DATABASES = {
         'default': dj_database_url.config(
@@ -103,7 +110,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -151,8 +158,10 @@ import os
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+'''
 # Add this for Render external hostname
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+'''
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
