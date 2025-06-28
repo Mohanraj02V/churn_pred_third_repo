@@ -88,6 +88,7 @@ DATABASES = {
     }
 }
 '''
+'''
 import dj_database_url
 import os
 
@@ -102,8 +103,8 @@ DATABASES = {
         'PORT': os.getenv('PGPORT'),
     }
 }
-
 '''
+
 if os.environ.get('DATABASE_URL'):
     DATABASES = {
         'default': dj_database_url.config(
@@ -119,7 +120,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
