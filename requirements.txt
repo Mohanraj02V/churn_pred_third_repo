@@ -6,14 +6,16 @@ dj-database-url
 mysqlclient
 django-extensions
 joblib
-scikit-learn
+# scikit-learn
+scikit-learn==1.7.0
+xgboost==2.0.3
 pandas
 python-dotenv
 numpy
 scipy
 threadpoolctl
 cython
-xgboost
+# xgboost
 psycopg2-binary
 django-environ
 django-cors-headers
