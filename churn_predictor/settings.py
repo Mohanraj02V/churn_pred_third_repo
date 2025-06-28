@@ -92,9 +92,14 @@ import dj_database_url
 import os
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PGDATABASE', 'mydatabase'),        # default: mydatabase
+        'USER': os.getenv('PGUSER', 'myuser'),                # default: myuser
+        'PASSWORD': os.getenv('PGPASSWORD', 'mypassword'),    # default: mypassword
+        'HOST': os.getenv('PGHOST', 'localhost'),             # default: localhost
+        'PORT': os.getenv('PGPORT', '5432'),                  # default: 5432
+    }
 }
 '''
 if os.environ.get('DATABASE_URL'):
