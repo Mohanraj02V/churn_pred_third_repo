@@ -42,7 +42,11 @@ services:
     name: churn-predictor-api
     runtime: python
     pythonVersion: 3.11.8
-    buildCommand: ./build.sh
+    buildCommand: |
+    pip install -r requirements.txt
+    python manage.py showmigrations
+    python manage.py migrate
+    # buildCommand: ./build.sh
     startCommand: gunicorn churn_predictor.wsgi:application
     envVars:
       - key: DATABASE_URL
