@@ -74,25 +74,25 @@
 # Field Explaination
   🧾 Input Fields Explanation
   {
-    "gender": "Female",             // Customer’s gender
-    "SeniorCitizen": 0,            // 1 if customer is a senior citizen, 0 otherwise
-    "Partner": "Yes",             // Whether the customer has a partner
-    "Dependents": "No",          // Whether the customer has dependents
-    "tenure": 5,                // Number of months the customer has stayed with the company
-    "PhoneService": "Yes",     // Whether the customer has phone service
-    "MultipleLines": "No",    // Whether the customer has multiple phone lines
-    "InternetService": "Fiber optic", // Type of internet service: DSL, Fiber optic, or No
-    "OnlineSecurity": "No",  // Whether the customer has online security add-on
-    "OnlineBackup": "Yes", // Whether the customer has online backup service
-    "DeviceProtection": "Yes", // Whether the customer has device protection
-    "TechSupport": "No", // Whether the customer has tech support service
-    "StreamingTV": "No", // Whether the customer streams TV
-    "StreamingMovies": "Yes", // Whether the customer streams movies
-    "Contract": "Month-to-month", // Type of contract: Month-to-month, One year, or Two year
-    "PaperlessBilling": "Yes", // 	Whether the customer uses paperless billing
-    "PaymentMethod": "Electronic check", // 	Method of payment: Electronic check, Mailed check, Bank transfer, Credit card
-    "MonthlyCharges": 80.35, // Monthly amount charged to the customer
-    "TotalCharges": 401.75 // Total amount charged to the customer to date
+  1. "gender": "Female",             // Customer’s gender
+  2. "SeniorCitizen": 0,            // 1 if customer is a senior citizen, 0 otherwise
+  3. "Partner": "Yes",             // Whether the customer has a partner
+  4. "Dependents": "No",          // Whether the customer has dependents
+  5. "tenure": 5,                // Number of months the customer has stayed with the company
+  6. "PhoneService": "Yes",     // Whether the customer has phone service
+  7. "MultipleLines": "No",    // Whether the customer has multiple phone lines
+  8. "InternetService": "Fiber optic", // Type of internet service: DSL, Fiber optic, or No
+  9. "OnlineSecurity": "No",  // Whether the customer has online security add-on
+  10. "OnlineBackup": "Yes", // Whether the customer has online backup service
+  11. "DeviceProtection": "Yes", // Whether the customer has device protection
+  12. "TechSupport": "No", // Whether the customer has tech support service
+  13. "StreamingTV": "No", // Whether the customer streams TV
+  14. "StreamingMovies": "Yes", // Whether the customer streams movies
+  15. "Contract": "Month-to-month", // Type of contract: Month-to-month, One year, or Two year
+  16. "PaperlessBilling": "Yes", // 	Whether the customer uses paperless billing
+  17. "PaymentMethod": "Electronic check", // 	Method of payment: Electronic check, Mailed check, Bank transfer, Credit card
+  18. "MonthlyCharges": 80.35, // Monthly amount charged to the customer
+  19. "TotalCharges": 401.75 // Total amount charged to the customer to date
   }
 
     
