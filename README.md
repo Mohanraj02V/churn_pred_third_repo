@@ -71,6 +71,29 @@
             "probability": 0.7490594387054443,
             "created_at": "2025-07-14T07:43:46.287349Z"
           }
+# Field Explaination
+  🧾 Input Fields Explanation
+  {
+    "gender": "Female",             // Customer’s gender
+    "SeniorCitizen": 0,            // 1 if customer is a senior citizen, 0 otherwise
+    "Partner": "Yes",             // Whether the customer has a partner
+    "Dependents": "No",          // Whether the customer has dependents
+    "tenure": 5,                // Number of months the customer has stayed with the company
+    "PhoneService": "Yes",     // Whether the customer has phone service
+    "MultipleLines": "No",    // Whether the customer has multiple phone lines
+    "InternetService": "Fiber optic", // Type of internet service: DSL, Fiber optic, or No
+    "OnlineSecurity": "No",  // Whether the customer has online security add-on
+    "OnlineBackup": "Yes", // Whether the customer has online backup service
+    "DeviceProtection": "Yes", // Whether the customer has device protection
+    "TechSupport": "No", // Whether the customer has tech support service
+    "StreamingTV": "No", // Whether the customer streams TV
+    "StreamingMovies": "Yes", // Whether the customer streams movies
+    "Contract": "Month-to-month", // Type of contract: Month-to-month, One year, or Two year
+    "PaperlessBilling": "Yes", // 	Whether the customer uses paperless billing
+    "PaymentMethod": "Electronic check", // 	Method of payment: Electronic check, Mailed check, Bank transfer, Credit card
+    "MonthlyCharges": 80.35, // Monthly amount charged to the customer
+    "TotalCharges": 401.75 // Total amount charged to the customer to date
+  }
 
     
 # 🛠 Tech Stack
