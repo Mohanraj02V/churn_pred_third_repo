@@ -72,28 +72,29 @@
             "created_at": "2025-07-14T07:43:46.287349Z"
           }
 # Field Explaination
-  🧾 Input Fields Explanation
-  {
-  1. "gender": "Female",             // Customer’s gender
-  2. "SeniorCitizen": 0,            // 1 if customer is a senior citizen, 0 otherwise
-  3. "Partner": "Yes",             // Whether the customer has a partner
-  4. "Dependents": "No",          // Whether the customer has dependents
-  5. "tenure": 5,                // Number of months the customer has stayed with the company
-  6. "PhoneService": "Yes",     // Whether the customer has phone service
-  7. "MultipleLines": "No",    // Whether the customer has multiple phone lines
-  8. "InternetService": "Fiber optic", // Type of internet service: DSL, Fiber optic, or No
-  9. "OnlineSecurity": "No",  // Whether the customer has online security add-on
-  10. "OnlineBackup": "Yes", // Whether the customer has online backup service
-  11. "DeviceProtection": "Yes", // Whether the customer has device protection
-  12. "TechSupport": "No", // Whether the customer has tech support service
-  13. "StreamingTV": "No", // Whether the customer streams TV
-  14. "StreamingMovies": "Yes", // Whether the customer streams movies
-  15. "Contract": "Month-to-month", // Type of contract: Month-to-month, One year, or Two year
-  16. "PaperlessBilling": "Yes", // 	Whether the customer uses paperless billing
-  17. "PaymentMethod": "Electronic check", // 	Method of payment: Electronic check, Mailed check, Bank transfer, Credit card
-  18. "MonthlyCharges": 80.35, // Monthly amount charged to the customer
-  19. "TotalCharges": 401.75 // Total amount charged to the customer to date
-  }
+input field explaination
+{
+  1. "gender": "Female",                     // ['Male', 'Female'] – Customer’s gender
+  2. "SeniorCitizen": 0,                    // [0 or 1] – 1 if senior citizen, 0 otherwise
+  3. "Partner": "Yes",                      // ['Yes', 'No'] – Whether the customer has a partner
+  4. "Dependents": "No",                    // ['Yes', 'No'] – Whether the customer has dependents
+  5. "tenure": 5,                           // Integer – Number of months the customer has stayed
+  6. "PhoneService": "Yes",                 // ['Yes', 'No'] – Does the customer have phone service
+  7. "MultipleLines": "No",                 // ['Yes', 'No', 'No phone service'] – Has multiple phone lines
+  8. "InternetService": "Fiber optic",      // ['DSL', 'Fiber optic', 'No'] – Type of internet service
+  9. "OnlineSecurity": "No",                // ['Yes', 'No', 'No internet service'] – Has online security
+  10. "OnlineBackup": "Yes",                // ['Yes', 'No', 'No internet service'] – Has online backup
+  11. "DeviceProtection": "Yes",            // ['Yes', 'No', 'No internet service'] – Has device protection
+  12. "TechSupport": "No",                  // ['Yes', 'No', 'No internet service'] – Has tech support
+  13. "StreamingTV": "No",                  // ['Yes', 'No', 'No internet service'] – Streams TV
+  14. "StreamingMovies": "Yes",             // ['Yes', 'No', 'No internet service'] – Streams movies
+  15. "Contract": "Month-to-month",         // ['Month-to-month', 'One year', 'Two year'] – Contract type
+  16. "PaperlessBilling": "Yes",            // ['Yes', 'No'] – Uses paperless billing
+  17. "PaymentMethod": "Electronic check",  // ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)']
+  18. "MonthlyCharges": 80.35,              // Float – Monthly amount charged
+  19. "TotalCharges": 401.75                // Float – Total amount charged to date
+}
+
 
     
 # 🛠 Tech Stack
